@@ -143,97 +143,67 @@ table {
     padding: 0;
 }
 
+body {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    font-size: 1.0em;
+}
+
+
+.heading {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.356);
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3.6em;
+    color: rgb(125, 27, 155);
+}
 
 main {
-    margin: 0 auto;
     position: relative;
     width: 100vw;
     max-width: 1200px;
     height: 100vh;
-    background: url(./images/trees.svg) bottom center no-repeat, url(./images/cloudOne.svg) 15% top no-repeat, url(./images/cloudTwo.svg) right 10% no-repeat, url(./images/cloudThree.svg) top center no-repeat, url(./images/sky.svg) bottom center no-repeat;
-    background-size: cover, 400px 400px, 300px 300px, 300px 200px, cover;
+    margin: 0 auto;
+    background:
+        url(./images/backgroundForest.png) bottom center no-repeat;
+    background:
+        url(./images/backgroundForest.svg) bottom center no-repeat;
+    background-size: cover;
 }
+
 
 .deer {
     position: absolute;
     bottom: 100px;
-    right: 0;
+    right: 100px;
     width: 400px;
-    height: 400px;
-    background:
-        url(./images/deerSleeping.svg) center center no-repeat;
-    background-size: auto 100%;
+    height: calc(11200px/28);
+    background: url('./images/deer.png') no-repeat;
+    background: url('./images/deer.svg') no-repeat;
+    background-position: 0 0;
+    background-size: 100% auto;
     cursor: pointer;
 }
 
-.deer.deerWakeUp {
-    background:
-        url(./images/deerWakedUp.svg) center center no-repeat;
-    background-size: auto 100%;
+.deer:hover {
+    animation: animateDeer 3s steps(28);
 }
 
-.deer.deerStanding {
-    width: 400px;
-    height: 500px;
-    background:
-        url(./images/deerStand.svg) center center no-repeat;
-    background-size: auto 100%;
-}
 
-.fox {
-    position: absolute;
-    bottom: 40px;
-    left: 15%;
-    width: 200px;
-    height: 250px;
-    background:
-        url(./images/foxSleeping.svg) center center no-repeat;
-    background-size: auto 100%;
-    cursor: pointer;
-}
+@keyframes animateDeer {
+    from {
+        background-position: 0 0;
+    }
 
-.fox.foxStanding {
-    bottom: -30px;
-    left: 15%;
-    width: 250px;
-    height: 450px;
-    background:
-        url(./images/foxStanding.svg) center center no-repeat;
-    background-size: 100% 100%;
-}
-
-.bunny {
-    position: absolute;
-    bottom: 130px;
-    left: 45%;
-    width: 180px;
-    height: 200px;
-    background:
-        url(./images/bunnyBack.svg) center center no-repeat;
-    background-size: auto 100%;
-    cursor: pointer;
-}
-
-.bunny.bunnyFront {
-    position: absolute;
-    bottom: 130px;
-    left: 45%;
-    width: 180px;
-    height: 200px;
-    background:
-        url(./images/bunnyFront.svg) center center no-repeat;
-    background-size: auto 100%;
-    cursor: pointer;
-}
-
-.bunny.bunnyFront.one {
-    position: absolute;
-    bottom: 130px;
-    left: 43%;
-    width: 200px;
-    height: 200px;
-    background:
-        url(./images/bunnyFrontOne.svg) center center no-repeat;
-    background-size: auto 100%;
-    cursor: pointer;
+    to {
+        background-position: 0 -11200px;
+    }
 }
